@@ -3,7 +3,16 @@ Rails.application.routes.draw do
 
   get 'user/signin'
 
-  get 'user/signout'
+  get 'user/signup'
+
+
+  post 'user/signup_submit'
+
+  post 'user/signin_submit'
+
+  post 'todo/done'
+
+  post 'todo/add'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

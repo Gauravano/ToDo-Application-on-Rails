@@ -4,15 +4,16 @@ class UserController < ApplicationController
 	if session[:p].nil?
 		return redirect_to '/user/signin'
 	else
-		@todos = Todo.where(user_id: session[:p])
+		@todos = Todo.where(users_id: session[:p])
 	end
   end
 
   def signin
   end
 
-  def signout
+  def signup
   end
+
 
   def signin_submit
   	password = params["password"]
@@ -54,7 +55,7 @@ def signup_submit
   end
 
   def logout
-    session[:p]  nil
+    session[:p] = nil
     return redirect_to '/user/index'
   end
 end    
